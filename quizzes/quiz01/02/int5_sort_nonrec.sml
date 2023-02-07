@@ -51,6 +51,33 @@ int5_sort_nr(xs) for every 5-tuple xs of the type int5.
 
 fun
 int5_sort_nr(xs: int5): int5 =
+  val one = #1xs;
+  val two = #2xs;
+  val thr = #3xs;
+  val fr = #4xs;
+  val fv = #5xs;
+  val b = [one];
+  if two > one then 
+  val b = b @ [two] else val b = [two] @ b;
+  if thr > hd(b) andalso thr> hd(tl(b)) then val b = b @ [thr]
+  else if thr >hd(b)o then val b = [hd(b)] @ [thr] @ [tl(hd(b))] 
+  else val b = [thr] @ [b];
+  
+  if fr > hd(b) andalso fr > hd(tl(b)) andalso  fr> hd(rev(b)) then val b = b @ [fr]
+  else if fr > hd(b) andalso fr>hd(tl(b)) then val b = [hd(b)] @ [tl(hd(b))] @ [fr] @ [hd(rev(b))]
+  else if fr > hd(b) then val b = [hd(b)] @ [fr] @ [tl(hd(b))] @ [hd(rev(b))];
+  else val b = [fr] @ b;
+  
+  if fv > hd(b) andalso fv > hd(tl(b)) andalso fv> hd(tl(tl(b))) andalso fv> hd(rev(b)) then val b = b@[fv]
+  else if fv >hd(b) andalso fv>hd(tl(b)) andalso fv>hd(tl(tl(b)))  then val b = [hd(b)] @ [tl(hd(b))] @ [(tl(tl(hd)))] @ [fv] @ [hd(rev(b))];
+  else if fv >hd(b) andalso fv>hd(tl(b))  then val b = [hd(b)] @ [tl(hd(b))] @[fv] @ [(tl(tl(hd)))]
+  else if fv> one then  val b = [hd(b)] @ [fv] @ [hd(tl(b))] @ [hd(tl(tl(b))] @ [hd(rev(b))];
+  else val b = [fv] @ b;
+
+something like this will work
+hahahaha
+
+
 (*
 Please Give your implementation as follows:
 *)
