@@ -173,10 +173,11 @@ fun card5_fullhouse(cs: card5): bool
 *)
 
 fun card5_fullhouse(cs: card5): bool =
-  if_fullhouse(int5_sort(rank2int(card_rank(#1cs)),rank2int(card_rank(#2cs)),rank2int(card_rank(#3cs)),rank2int(card_rank(#4cs)),rank2int(card_rank(#5cs)));
+  if_fullhouse(int5_sort(rank2int(card_rank(#1cs)),rank2int(card_rank(#2cs)),rank2int(card_rank(#3cs)),rank2int(card_rank(#4cs)),rank2int(card_rank(#5cs))));
  
 fun if_fullhouse(vals: int5): bool = 
-  if #1(vals) != #2(vals) then false else if #4(vals) != #5(vals) then false else if #2(vals) != #3(vals) then #3(vals) = #4(vals) else if #3(vals) != #4(vals) then #2(vals) = #3(vals);
+  if #1(vals) = #2(vals) then if #4(vals) = #5(vals) then if #2(vals) = #3(vals) then true else if #3(vals) = #4(vals) then true 
+  else false else false else false;
   
 
 
