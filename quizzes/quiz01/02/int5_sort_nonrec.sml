@@ -71,7 +71,7 @@ int5_sort_nr(xs: int5): int5 =
   if fv > hd(b) andalso fv > hd(tl(b)) andalso fv> hd(tl(tl(b))) andalso fv> hd(rev(b)) then val b = b@[fv]
   else if fv >hd(b) andalso fv>hd(tl(b)) andalso fv>hd(tl(tl(b)))  then val b = [hd(b)] @ [tl(hd(b))] @ [(tl(tl(hd)))] @ [fv] @ [hd(rev(b))];
   else if fv >hd(b) andalso fv>hd(tl(b))  then val b = [hd(b)] @ [tl(hd(b))] @[fv] @ [(tl(tl(hd)))]
-  else if fv> one then  val b = [hd(b)] @ [fv] @ [hd(tl(b))] @ [hd(tl(tl(b))] @ [hd(rev(b))];
+  else if fv> hd(b) then  val b = [hd(b)] @ [fv] @ [hd(tl(b))] @ [hd(tl(tl(b))] @ [hd(rev(b))];
   else val b = [fv] @ b;
 
 
