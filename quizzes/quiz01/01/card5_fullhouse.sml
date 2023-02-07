@@ -172,8 +172,16 @@ fun card5_fullhouse(cs: card5): bool
 //
 *)
 
-fun
-card5_fullhouse(cs: card5): bool =
+fun card5_fullhouse(cs: card5): bool =
+  if_fullhouse(int5_sort(card_rank(#1cs),card_rank(#2cs),card_rank(#3cs),card_rank(#4cs),card_rank(#5cs)));
+
+fun if_fullhouse(vals: int5): bool = 
+  if #1(vals) != #2(vals) then false else if #4(vals) != #5(vals) then false else if #2(vals) != #3(vals) then #3(vals) = #4(vals) else if #3(vals) != #4(vals) then #2(vals) = #3(vals);
+  
+
+
+
+
 (*
 Please Give your implementation as follows:
 *)
