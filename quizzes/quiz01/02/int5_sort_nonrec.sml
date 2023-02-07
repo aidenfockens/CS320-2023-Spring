@@ -74,8 +74,7 @@ int5_sort_nr(xs: int5): int5 =
   else if fv> one then  val b = [hd(b)] @ [fv] @ [hd(tl(b))] @ [hd(tl(tl(b))] @ [hd(rev(b))];
   else val b = [fv] @ b;
 
-something like this will work
-hahahaha
+
 
 
 (*
